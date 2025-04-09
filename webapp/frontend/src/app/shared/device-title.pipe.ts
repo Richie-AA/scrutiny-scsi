@@ -11,7 +11,7 @@ export class DeviceTitlePipe implements PipeTransform {
         switch(titleType){
             case 'name':
                 titleParts.push(`/dev/${device.device_name}`)
-                if (device.device_type && device.device_type !== 'scsi' && device.device_type !== 'ata'){
+                if (device.device_type){
                     titleParts.push(device.device_type)
                 }
                 titleParts.push(device.model_name)
