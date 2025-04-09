@@ -568,56 +568,56 @@ func m20201107210306_FromPreInfluxDBSmartResultsCreatePostInfluxDBSmartResults(d
 
 	} else if preDevice.IsScsi() {
 		//info collector.SmartInfo
-		var postScsiGrownDefectList int64
+		var postScsiGrownDefectList uint64
 		postScsiErrorCounterLog := collector.ScsiErrorCounterLog{
 			Read: struct {
-				ErrorsCorrectedByEccfast         int64  `json:"errors_corrected_by_eccfast"`
-				ErrorsCorrectedByEccdelayed      int64  `json:"errors_corrected_by_eccdelayed"`
-				ErrorsCorrectedByRereadsRewrites int64  `json:"errors_corrected_by_rereads_rewrites"`
-				TotalErrorsCorrected             int64  `json:"total_errors_corrected"`
-				CorrectionAlgorithmInvocations   int64  `json:"correction_algorithm_invocations"`
-				GigabytesProcessed               string `json:"gigabytes_processed"`
-				TotalUncorrectedErrors           int64  `json:"total_uncorrected_errors"`
+				ErrorsCorrectedByEccfast         uint64  `json:"errors_corrected_by_eccfast"`
+				ErrorsCorrectedByEccdelayed      uint64  `json:"errors_corrected_by_eccdelayed"`
+				ErrorsCorrectedByRereadsRewrites uint64  `json:"errors_corrected_by_rereads_rewrites"`
+				TotalErrorsCorrected             uint64  `json:"total_errors_corrected"`
+				CorrectionAlgorithmInvocations   uint64  `json:"correction_algorithm_invocations"`
+				GigabytesProcessed               string  `json:"gigabytes_processed"`
+				TotalUncorrectedErrors           uint64  `json:"total_uncorrected_errors"`
 			}{},
 			Write: struct {
-				ErrorsCorrectedByEccfast         int64  `json:"errors_corrected_by_eccfast"`
-				ErrorsCorrectedByEccdelayed      int64  `json:"errors_corrected_by_eccdelayed"`
-				ErrorsCorrectedByRereadsRewrites int64  `json:"errors_corrected_by_rereads_rewrites"`
-				TotalErrorsCorrected             int64  `json:"total_errors_corrected"`
-				CorrectionAlgorithmInvocations   int64  `json:"correction_algorithm_invocations"`
-				GigabytesProcessed               string `json:"gigabytes_processed"`
-				TotalUncorrectedErrors           int64  `json:"total_uncorrected_errors"`
+				ErrorsCorrectedByEccfast         uint64  `json:"errors_corrected_by_eccfast"`
+				ErrorsCorrectedByEccdelayed      uint64  `json:"errors_corrected_by_eccdelayed"`
+				ErrorsCorrectedByRereadsRewrites uint64  `json:"errors_corrected_by_rereads_rewrites"`
+				TotalErrorsCorrected             uint64  `json:"total_errors_corrected"`
+				CorrectionAlgorithmInvocations   uint64  `json:"correction_algorithm_invocations"`
+				GigabytesProcessed               string  `json:"gigabytes_processed"`
+				TotalUncorrectedErrors           uint64  `json:"total_uncorrected_errors"`
 			}{},
 		}
 
 		for _, preScsiAttribute := range preSmartResult.ScsiAttributes {
 			switch preScsiAttribute.AttributeId {
 			case "scsi_grown_defect_list":
-				postScsiGrownDefectList = int64(preScsiAttribute.Value)
+				postScsiGrownDefectList = uint64(preScsiAttribute.Value)
 			case "read.errors_corrected_by_eccfast":
-				postScsiErrorCounterLog.Read.ErrorsCorrectedByEccfast = int64(preScsiAttribute.Value)
+				postScsiErrorCounterLog.Read.ErrorsCorrectedByEccfast = uint64(preScsiAttribute.Value)
 			case "read.errors_corrected_by_eccdelayed":
-				postScsiErrorCounterLog.Read.ErrorsCorrectedByEccdelayed = int64(preScsiAttribute.Value)
+				postScsiErrorCounterLog.Read.ErrorsCorrectedByEccdelayed = uint64(preScsiAttribute.Value)
 			case "read.errors_corrected_by_rereads_rewrites":
-				postScsiErrorCounterLog.Read.ErrorsCorrectedByRereadsRewrites = int64(preScsiAttribute.Value)
+				postScsiErrorCounterLog.Read.ErrorsCorrectedByRereadsRewrites = uint64(preScsiAttribute.Value)
 			case "read.total_errors_corrected":
-				postScsiErrorCounterLog.Read.TotalErrorsCorrected = int64(preScsiAttribute.Value)
+				postScsiErrorCounterLog.Read.TotalErrorsCorrected = uint64(preScsiAttribute.Value)
 			case "read.correction_algorithm_invocations":
-				postScsiErrorCounterLog.Read.CorrectionAlgorithmInvocations = int64(preScsiAttribute.Value)
+				postScsiErrorCounterLog.Read.CorrectionAlgorithmInvocations = uint64(preScsiAttribute.Value)
 			case "read.total_uncorrected_errors":
-				postScsiErrorCounterLog.Read.TotalUncorrectedErrors = int64(preScsiAttribute.Value)
+				postScsiErrorCounterLog.Read.TotalUncorrectedErrors = uint64(preScsiAttribute.Value)
 			case "write.errors_corrected_by_eccfast":
-				postScsiErrorCounterLog.Write.ErrorsCorrectedByEccfast = int64(preScsiAttribute.Value)
+				postScsiErrorCounterLog.Write.ErrorsCorrectedByEccfast = uint64(preScsiAttribute.Value)
 			case "write.errors_corrected_by_eccdelayed":
-				postScsiErrorCounterLog.Write.ErrorsCorrectedByEccdelayed = int64(preScsiAttribute.Value)
+				postScsiErrorCounterLog.Write.ErrorsCorrectedByEccdelayed = uint64(preScsiAttribute.Value)
 			case "write.errors_corrected_by_rereads_rewrites":
-				postScsiErrorCounterLog.Write.ErrorsCorrectedByRereadsRewrites = int64(preScsiAttribute.Value)
+				postScsiErrorCounterLog.Write.ErrorsCorrectedByRereadsRewrites = uint64(preScsiAttribute.Value)
 			case "write.total_errors_corrected":
-				postScsiErrorCounterLog.Write.TotalErrorsCorrected = int64(preScsiAttribute.Value)
+				postScsiErrorCounterLog.Write.TotalErrorsCorrected = uint64(preScsiAttribute.Value)
 			case "write.correction_algorithm_invocations":
-				postScsiErrorCounterLog.Write.CorrectionAlgorithmInvocations = int64(preScsiAttribute.Value)
+				postScsiErrorCounterLog.Write.CorrectionAlgorithmInvocations = uint64(preScsiAttribute.Value)
 			case "write.total_uncorrected_errors":
-				postScsiErrorCounterLog.Write.TotalUncorrectedErrors = int64(preScsiAttribute.Value)
+				postScsiErrorCounterLog.Write.TotalUncorrectedErrors = uint64(preScsiAttribute.Value)
 			}
 		}
 		postDeviceSmartData.ProcessScsiSmartInfo(postScsiGrownDefectList, postScsiErrorCounterLog)

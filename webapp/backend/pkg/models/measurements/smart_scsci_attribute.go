@@ -10,7 +10,7 @@ import (
 
 type SmartScsiAttribute struct {
 	AttributeId string `json:"attribute_id"` //json string from smartctl
-	Value       int64  `json:"value"`
+	Value       uint64 `json:"value"`
 	Threshold   int64  `json:"thresh"`
 
 	TransformedValue int64               `json:"transformed_value"`
@@ -51,7 +51,7 @@ func (sa *SmartScsiAttribute) Inflate(key string, val interface{}) {
 	case "attribute_id":
 		sa.AttributeId = val.(string)
 	case "value":
-		sa.Value = val.(int64)
+		sa.Value = val.(uint64)
 	case "thresh":
 		sa.Threshold = val.(int64)
 
@@ -76,8 +76,8 @@ func (sa *SmartScsiAttribute) PopulateAttributeStatus() *SmartScsiAttribute {
 	if sa.Threshold != -1 {
 		if smartMetadata, ok := thresholds.NmveMetadata[sa.AttributeId]; ok {
 			//check what the ideal is. Ideal tells us if we our recorded value needs to be above, or below the threshold
-			if (smartMetadata.Ideal == "low" && sa.Value > sa.Threshold) ||
-				(smartMetadata.Ideal == "high" && sa.Value < sa.Threshold) {
+			if (smartMetadata.Ideal == "low" && sa.Value > uint64(sa.Threshold)) ||
+				(smartMetadata.Ideal == "high" && sa.Value < uint64(sa.Threshold)) {
 				sa.Status = pkg.AttributeStatusSet(sa.Status, pkg.AttributeStatusFailedScrutiny)
 				sa.StatusReason = "Attribute is failing recommended SMART threshold"
 			}
