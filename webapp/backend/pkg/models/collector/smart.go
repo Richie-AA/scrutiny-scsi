@@ -233,8 +233,8 @@ type SmartInfo struct {
 	ScsiStartStopCycleCounter struct {
 		AccumulatedStartStopCycles int64 `json:"accumulated_start_stop_cycles"`
 	} `json:"scsi_start_stop_cycle_counter"`
-	ScsiModelName		string				`json:"scsi_model_name"`
-	ScsiRevision		string				`json:"scsi_revision"`
+	ScsiModelName       string              `json:"scsi_model_name"`
+	ScsiRevision        string              `json:"scsi_revision"`
 	Vendor              string              `json:"vendor"`
 	Product             string              `json:"product"`
 	ScsiVersion         string              `json:"scsi_version"`
@@ -256,6 +256,10 @@ func (s *SmartInfo) CapacityDetermine() int64 {
 type UserCapacity struct {
 	Blocks int64 `json:"blocks"`
 	Bytes  int64 `json:"bytes"`
+}
+
+type ScsiStartStopCycleCounter struct {
+	AccumulatedStartStopCycles int64 `json:"accumulated_start_stop_cycles"`
 }
 
 // Functions to return SCSI specific values
@@ -335,21 +339,21 @@ type NvmeSmartHealthInformationLog struct {
 
 type ScsiErrorCounterLog struct {
 	Read struct {
-		ErrorsCorrectedByEccfast         uint64  `json:"errors_corrected_by_eccfast"`
-		ErrorsCorrectedByEccdelayed      uint64  `json:"errors_corrected_by_eccdelayed"`
-		ErrorsCorrectedByRereadsRewrites uint64  `json:"errors_corrected_by_rereads_rewrites"`
-		TotalErrorsCorrected             uint64  `json:"total_errors_corrected"`
-		CorrectionAlgorithmInvocations   uint64  `json:"correction_algorithm_invocations"`
-		GigabytesProcessed               string  `json:"gigabytes_processed"`
-		TotalUncorrectedErrors           uint64  `json:"total_uncorrected_errors"`
+		ErrorsCorrectedByEccfast         uint64 `json:"errors_corrected_by_eccfast"`
+		ErrorsCorrectedByEccdelayed      uint64 `json:"errors_corrected_by_eccdelayed"`
+		ErrorsCorrectedByRereadsRewrites uint64 `json:"errors_corrected_by_rereads_rewrites"`
+		TotalErrorsCorrected             uint64 `json:"total_errors_corrected"`
+		CorrectionAlgorithmInvocations   uint64 `json:"correction_algorithm_invocations"`
+		GigabytesProcessed               string `json:"gigabytes_processed"`
+		TotalUncorrectedErrors           uint64 `json:"total_uncorrected_errors"`
 	} `json:"read"`
 	Write struct {
-		ErrorsCorrectedByEccfast         uint64  `json:"errors_corrected_by_eccfast"`
-		ErrorsCorrectedByEccdelayed      uint64  `json:"errors_corrected_by_eccdelayed"`
-		ErrorsCorrectedByRereadsRewrites uint64  `json:"errors_corrected_by_rereads_rewrites"`
-		TotalErrorsCorrected             uint64  `json:"total_errors_corrected"`
-		CorrectionAlgorithmInvocations   uint64  `json:"correction_algorithm_invocations"`
-		GigabytesProcessed               string  `json:"gigabytes_processed"`
-		TotalUncorrectedErrors           uint64  `json:"total_uncorrected_errors"`
+		ErrorsCorrectedByEccfast         uint64 `json:"errors_corrected_by_eccfast"`
+		ErrorsCorrectedByEccdelayed      uint64 `json:"errors_corrected_by_eccdelayed"`
+		ErrorsCorrectedByRereadsRewrites uint64 `json:"errors_corrected_by_rereads_rewrites"`
+		TotalErrorsCorrected             uint64 `json:"total_errors_corrected"`
+		CorrectionAlgorithmInvocations   uint64 `json:"correction_algorithm_invocations"`
+		GigabytesProcessed               string `json:"gigabytes_processed"`
+		TotalUncorrectedErrors           uint64 `json:"total_uncorrected_errors"`
 	} `json:"write"`
 }

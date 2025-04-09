@@ -1,0 +1,284 @@
+{
+    "json_format_version": [
+      1,
+      0
+    ],
+    "smartctl": {
+      "version": [
+        7,
+        3
+      ],
+      "svn_revision": "5338",
+      "platform_info": "x86_64-linux-4.4.302+",
+      "build_info": "(local build)",
+      "argv": [
+        "smartctl",
+        "--xall",
+        "--json",
+        "/dev/sdk"
+      ],
+      "exit_status": 0
+    },
+    "local_time": {
+      "time_t": 1742536940,
+      "asctime": "Fri Mar 21 06:02:20 2025 UTC"
+    },
+    "device": {
+      "name": "/dev/sdk",
+      "info_name": "/dev/sdk",
+      "type": "scsi",
+      "protocol": "SCSI"
+    },
+    "scsi_vendor": "HP",
+    "scsi_product": "MB3000FBUCN",
+    "scsi_model_name": "HP MB3000FBUCN",
+    "scsi_revision": "HPD3",
+    "scsi_version": "SPC-3",
+    "user_capacity": {
+      "blocks": 5860533168,
+      "bytes": 3000592982016
+    },
+    "logical_block_size": 512,
+    "rotation_rate": 7200,
+    "form_factor": {
+      "scsi_value": 2,
+      "name": "3.5 inches"
+    },
+    "logical_unit_id": "0x5000cca000000000",
+    "serial_number": "YVXXXXXX",
+    "device_type": {
+      "scsi_terminology": "Peripheral Device Type [PDT]",
+      "scsi_value": 0,
+      "name": "disk"
+    },
+    "scsi_transport_protocol": {
+      "name": "SAS (SPL-4)",
+      "value": 6
+    },
+    "smart_support": {
+      "available": true,
+      "enabled": true
+    },
+    "temperature_warning": {
+      "enabled": true
+    },
+    "smart_status": {
+      "passed": true
+    },
+    "temperature": {
+      "current": 32,
+      "drive_trip": 65
+    },
+    "scsi_start_stop_cycle_counter": {
+      "year_of_manufacture": "2012",
+      "week_of_manufacture": "42",
+      "specified_cycle_count_over_device_lifetime": 50000,
+      "accumulated_start_stop_cycles": 157,
+      "specified_load_unload_count_over_device_lifetime": 600000,
+      "accumulated_load_unload_cycles": 2959
+    },
+    "scsi_grown_defect_list": 0,
+    "scsi_error_counter_log": {
+      "read": {
+        "errors_corrected_by_eccfast": 0,
+        "errors_corrected_by_eccdelayed": 4710205,
+        "errors_corrected_by_rereads_rewrites": 0,
+        "total_errors_corrected": 0,
+        "correction_algorithm_invocations": 0,
+        "gigabytes_processed": "3143419.949",
+        "total_uncorrected_errors": 0
+      },
+      "write": {
+        "errors_corrected_by_eccfast": 0,
+        "errors_corrected_by_eccdelayed": 1353452,
+        "errors_corrected_by_rereads_rewrites": 0,
+        "total_errors_corrected": 1353452,
+        "correction_algorithm_invocations": 0,
+        "gigabytes_processed": "47556.728",
+        "total_uncorrected_errors": 0
+      },
+      "verify": {
+        "errors_corrected_by_eccfast": 0,
+        "errors_corrected_by_eccdelayed": 0,
+        "errors_corrected_by_rereads_rewrites": 0,
+        "total_errors_corrected": 0,
+        "correction_algorithm_invocations": 0,
+        "gigabytes_processed": "0.101",
+        "total_uncorrected_errors": 0
+      }
+    },
+    "scsi_self_test_0": {
+      "code": {
+        "value": 2,
+        "string": "Background long"
+      },
+      "result": {
+        "value": 1,
+        "string": "Aborted (by user command)"
+      },
+      "failed_segment": {
+        "value": 6,
+        "aka": "self_test_number"
+      },
+      "power_on_time": {
+        "hours": 5075,
+        "aka": "accumulated_power_on_hours"
+      }
+    },
+    "scsi_self_test_1": {
+      "code": {
+        "value": 1,
+        "string": "Background short"
+      },
+      "result": {
+        "value": 0,
+        "string": "Completed"
+      },
+      "power_on_time": {
+        "hours": 5075,
+        "aka": "accumulated_power_on_hours"
+      }
+    },
+    "scsi_self_test_2": {
+      "code": {
+        "value": 1,
+        "string": "Background short"
+      },
+      "result": {
+        "value": 0,
+        "string": "Completed"
+      },
+      "power_on_time": {
+        "hours": 5074,
+        "aka": "accumulated_power_on_hours"
+      }
+    },
+    "scsi_self_test_3": {
+      "code": {
+        "value": 1,
+        "string": "Background short"
+      },
+      "result": {
+        "value": 0,
+        "string": "Completed"
+      },
+      "power_on_time": {
+        "hours": 5073,
+        "aka": "accumulated_power_on_hours"
+      }
+    },
+    "scsi_self_test_4": {
+      "code": {
+        "value": 1,
+        "string": "Background short"
+      },
+      "result": {
+        "value": 2,
+        "string": "Aborted (device reset ?)"
+      },
+      "failed_segment": {
+        "value": 2,
+        "aka": "self_test_number"
+      },
+      "power_on_time": {
+        "hours": 5073,
+        "aka": "accumulated_power_on_hours"
+      }
+    },
+    "scsi_self_test_5": {
+      "code": {
+        "value": 1,
+        "string": "Background short"
+      },
+      "result": {
+        "value": 0,
+        "string": "Completed"
+      },
+      "power_on_time": {
+        "hours": 5073,
+        "aka": "accumulated_power_on_hours"
+      }
+    },
+    "scsi_self_test_6": {
+      "code": {
+        "value": 1,
+        "string": "Background short"
+      },
+      "result": {
+        "value": 2,
+        "string": "Aborted (device reset ?)"
+      },
+      "failed_segment": {
+        "value": 2,
+        "aka": "self_test_number"
+      },
+      "power_on_time": {
+        "hours": 5072,
+        "aka": "accumulated_power_on_hours"
+      }
+    },
+    "scsi_extended_self_test_seconds": 27182,
+    "scsi_background_scan": {
+      "status": {
+        "value": 1,
+        "string": "scan is active",
+        "number_scans_performed": 2249,
+        "scan_progress": "86.75%",
+        "number_medium_scans_performed": 2249
+      }
+    },
+    "power_on_time": {
+      "hours": 5776,
+      "minutes": 12
+    },
+    "scsi_sas_port_0": {
+      "relative_target_port_id": 1,
+      "generation_code": 1,
+      "number_of_phys": 1,
+      "phy_0": {
+        "identifier": 0,
+        "attached_device_type": "SAS or SATA device",
+        "attached_reason": "power on",
+        "reason": "unknown",
+        "negotiated_logical_link_rate": "phy enabled; 6 Gbps",
+        "attached_initiator_port": {
+          "ssp_stp_smp": "111"
+        },
+        "attached_target_port": {
+          "ssp_stp_smp": "000"
+        },
+        "sas_address": "0x5000cca03e408661",
+        "attached_sas_address": "0x56c92bf0000a17e0",
+        "attached_phy_identifier": 0,
+        "invalid_dword_count": 40,
+        "running_disparity_error_count": 38,
+        "loss_of_dword_synchronization_count": 9,
+        "phy_reset_problem_count": 0
+      }
+    },
+    "scsi_sas_port_1": {
+      "relative_target_port_id": 2,
+      "generation_code": 1,
+      "number_of_phys": 1,
+      "phy_0": {
+        "identifier": 1,
+        "attached_device_type": "no device attached",
+        "attached_reason": "unknown",
+        "reason": "power on",
+        "negotiated_logical_link_rate": "phy enabled; unknown",
+        "attached_initiator_port": {
+          "ssp_stp_smp": "000"
+        },
+        "attached_target_port": {
+          "ssp_stp_smp": "000"
+        },
+        "sas_address": "0x5000cca03e408662",
+        "attached_sas_address": "0x0",
+        "attached_phy_identifier": 0,
+        "invalid_dword_count": 0,
+        "running_disparity_error_count": 0,
+        "loss_of_dword_synchronization_count": 0,
+        "phy_reset_problem_count": 0
+      }
+    }
+  }

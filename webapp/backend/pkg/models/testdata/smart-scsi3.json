@@ -1,0 +1,209 @@
+{
+    "json_format_version": [
+      1,
+      0
+    ],
+    "smartctl": {
+      "version": [
+        7,
+        3
+      ],
+      "svn_revision": "5338",
+      "platform_info": "x86_64-linux-4.4.302+",
+      "build_info": "(local build)",
+      "argv": [
+        "smartctl",
+        "--xall",
+        "--json",
+        "/dev/sdj"
+      ],
+      "exit_status": 0
+    },
+    "local_time": {
+      "time_t": 1742536939,
+      "asctime": "Fri Mar 21 06:02:19 2025 UTC"
+    },
+    "device": {
+      "name": "/dev/sdj",
+      "info_name": "/dev/sdj",
+      "type": "scsi",
+      "protocol": "SCSI"
+    },
+    "scsi_vendor": "IBM-ESXS",
+    "scsi_product": "ST2000NM0034   X",
+    "scsi_model_name": "IBM-ESXS ST2000NM0034   X",
+    "scsi_revision": "BC6B",
+    "scsi_version": "SPC-4",
+    "user_capacity": {
+      "blocks": 3907029168,
+      "bytes": 2000398934016
+    },
+    "logical_block_size": 512,
+    "physical_block_size": 4096,
+    "scsi_protection_type": 2,
+    "scsi_protection_interval_bytes_per_lb": 8,
+    "scsi_lb_provisioning": {
+      "name": "fully provisioned",
+      "value": 0,
+      "management_enabled": {
+        "name": "LBPME",
+        "value": 0
+      },
+      "read_zeros": {
+        "name": "LBPRZ",
+        "value": 0
+      }
+    },
+    "rotation_rate": 7200,
+    "form_factor": {
+      "scsi_value": 2,
+      "name": "3.5 inches"
+    },
+    "logical_unit_id": "0x5000c50000000000",
+    "serial_number": "Z4H0CBJT000000000000",
+    "device_type": {
+      "scsi_terminology": "Peripheral Device Type [PDT]",
+      "scsi_value": 0,
+      "name": "disk"
+    },
+    "scsi_transport_protocol": {
+      "name": "SAS (SPL-4)",
+      "value": 6
+    },
+    "smart_support": {
+      "available": true,
+      "enabled": true
+    },
+    "temperature_warning": {
+      "enabled": true
+    },
+    "smart_status": {
+      "passed": true
+    },
+    "temperature": {
+      "current": 27,
+      "drive_trip": 65
+    },
+    "scsi_grown_defect_list": 0,
+    "scsi_error_counter_log": {
+      "read": {
+        "errors_corrected_by_eccfast": 3263795539,
+        "errors_corrected_by_eccdelayed": 0,
+        "errors_corrected_by_rereads_rewrites": 0,
+        "total_errors_corrected": 3263795539,
+        "correction_algorithm_invocations": 0,
+        "gigabytes_processed": "543540.201",
+        "total_uncorrected_errors": 0
+      },
+      "write": {
+        "errors_corrected_by_eccfast": 0,
+        "errors_corrected_by_eccdelayed": 18446744073709551615,
+        "errors_corrected_by_rereads_rewrites": 18446744073709551615,
+        "total_errors_corrected": 0,
+        "correction_algorithm_invocations": 0,
+        "gigabytes_processed": "54510.169",
+        "total_uncorrected_errors": 0
+      },
+      "verify": {
+        "errors_corrected_by_eccfast": 4809714,
+        "errors_corrected_by_eccdelayed": 0,
+        "errors_corrected_by_rereads_rewrites": 0,
+        "total_errors_corrected": 4809714,
+        "correction_algorithm_invocations": 0,
+        "gigabytes_processed": "312.256",
+        "total_uncorrected_errors": 0
+      }
+    },
+    "scsi_self_test_0": {
+      "code": {
+        "value": 2,
+        "string": "Background long"
+      },
+      "result": {
+        "value": 0,
+        "string": "Completed"
+      },
+      "power_on_time": {
+        "hours": 27222,
+        "aka": "accumulated_power_on_hours"
+      }
+    },
+    "scsi_self_test_1": {
+      "code": {
+        "value": 2,
+        "string": "Background long"
+      },
+      "result": {
+        "value": 2,
+        "string": "Aborted (device reset ?)"
+      },
+      "power_on_time": {
+        "hours": 27218,
+        "aka": "accumulated_power_on_hours"
+      }
+    },
+    "scsi_extended_self_test_seconds": 15514,
+    "scsi_background_scan": {
+      "status": {
+        "value": 8,
+        "string": "waiting until BMS interval timer expires",
+        "number_scans_performed": 208,
+        "scan_progress": "0.00%",
+        "number_medium_scans_performed": 208
+      }
+    },
+    "power_on_time": {
+      "hours": 27311,
+      "minutes": 14
+    },
+    "scsi_sas_port_0": {
+      "relative_target_port_id": 1,
+      "generation_code": 0,
+      "number_of_phys": 1,
+      "phy_0": {
+        "identifier": 0,
+        "attached_device_type": "SAS or SATA device",
+        "attached_reason": "unknown",
+        "reason": "unknown",
+        "negotiated_logical_link_rate": "phy enabled; 6 Gbps",
+        "attached_initiator_port": {
+          "ssp_stp_smp": "111"
+        },
+        "attached_target_port": {
+          "ssp_stp_smp": "000"
+        },
+        "sas_address": "0x5000c50085c779f1",
+        "attached_sas_address": "0x56c92bf0000a17e3",
+        "attached_phy_identifier": 3,
+        "invalid_dword_count": 0,
+        "running_disparity_error_count": 0,
+        "loss_of_dword_synchronization_count": 1,
+        "phy_reset_problem_count": 0
+      }
+    },
+    "scsi_sas_port_1": {
+      "relative_target_port_id": 2,
+      "generation_code": 0,
+      "number_of_phys": 1,
+      "phy_0": {
+        "identifier": 1,
+        "attached_device_type": "no device attached",
+        "attached_reason": "unknown",
+        "reason": "unknown",
+        "negotiated_logical_link_rate": "phy enabled; unknown",
+        "attached_initiator_port": {
+          "ssp_stp_smp": "000"
+        },
+        "attached_target_port": {
+          "ssp_stp_smp": "000"
+        },
+        "sas_address": "0x5000c50085c779f2",
+        "attached_sas_address": "0x0",
+        "attached_phy_identifier": 0,
+        "invalid_dword_count": 0,
+        "running_disparity_error_count": 0,
+        "loss_of_dword_synchronization_count": 0,
+        "phy_reset_problem_count": 0
+      }
+    }
+  }

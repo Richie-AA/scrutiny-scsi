@@ -2,14 +2,15 @@ package measurements_test
 
 import (
 	"encoding/json"
-	"github.com/analogj/scrutiny/webapp/backend/pkg"
-	"github.com/analogj/scrutiny/webapp/backend/pkg/models/collector"
-	"github.com/analogj/scrutiny/webapp/backend/pkg/models/measurements"
-	"github.com/stretchr/testify/require"
 	"io/ioutil"
 	"os"
 	"testing"
 	"time"
+
+	"github.com/analogj/scrutiny/webapp/backend/pkg"
+	"github.com/analogj/scrutiny/webapp/backend/pkg/models/collector"
+	"github.com/analogj/scrutiny/webapp/backend/pkg/models/measurements"
+	"github.com/stretchr/testify/require"
 )
 
 func TestSmart_Flatten(t *testing.T) {
@@ -117,7 +118,7 @@ func TestSmart_Flatten_SCSI(t *testing.T) {
 		Attributes: map[string]measurements.SmartAttribute{
 			"read_errors_corrected_by_eccfast": &measurements.SmartScsiAttribute{
 				AttributeId: "read_errors_corrected_by_eccfast",
-				Value:       int64(300357663),
+				Value:       uint64(300357663),
 			},
 		},
 	}
@@ -134,7 +135,7 @@ func TestSmart_Flatten_SCSI(t *testing.T) {
 		"attr.read_errors_corrected_by_eccfast.status_reason":     "",
 		"attr.read_errors_corrected_by_eccfast.thresh":            int64(0),
 		"attr.read_errors_corrected_by_eccfast.transformed_value": int64(0),
-		"attr.read_errors_corrected_by_eccfast.value":             int64(300357663),
+		"attr.read_errors_corrected_by_eccfast.value":             uint64(300357663),
 		"power_cycle_count": int64(10),
 		"power_on_hours":    int64(10),
 		"temp":              int64(50)},
@@ -278,7 +279,7 @@ func TestNewSmartFromInfluxDB_SCSI(t *testing.T) {
 		"attr.read_errors_corrected_by_eccfast.status_reason":     "",
 		"attr.read_errors_corrected_by_eccfast.thresh":            int64(0),
 		"attr.read_errors_corrected_by_eccfast.transformed_value": int64(0),
-		"attr.read_errors_corrected_by_eccfast.value":             int64(300357663),
+		"attr.read_errors_corrected_by_eccfast.value":             uint64(300357663),
 		"power_cycle_count": int64(10),
 		"power_on_hours":    int64(10),
 		"temp":              int64(50),
@@ -299,7 +300,7 @@ func TestNewSmartFromInfluxDB_SCSI(t *testing.T) {
 		Attributes: map[string]measurements.SmartAttribute{
 			"read_errors_corrected_by_eccfast": &measurements.SmartScsiAttribute{
 				AttributeId: "read_errors_corrected_by_eccfast",
-				Value:       int64(300357663),
+				Value:       uint64(300357663),
 			},
 		}, Status: 0}, smart)
 }
@@ -498,6 +499,6 @@ func TestFromCollectorSmartInfo_Scsi(t *testing.T) {
 	require.Equal(t, pkg.DeviceStatusPassed, smartMdl.Status)
 	require.Equal(t, 13, len(smartMdl.Attributes))
 
-	require.Equal(t, int64(56), smartMdl.Attributes["scsi_grown_defect_list"].(*measurements.SmartScsiAttribute).Value)
-	require.Equal(t, int64(300357663), smartMdl.Attributes["read_errors_corrected_by_eccfast"].(*measurements.SmartScsiAttribute).Value) //total_errors_corrected
+	require.Equal(t, uint64(56), smartMdl.Attributes["scsi_grown_defect_list"].(*measurements.SmartScsiAttribute).Value)
+	require.Equal(t, uint64(300357663), smartMdl.Attributes["read_errors_corrected_by_eccfast"].(*measurements.SmartScsiAttribute).Value) //total_errors_corrected
 }
