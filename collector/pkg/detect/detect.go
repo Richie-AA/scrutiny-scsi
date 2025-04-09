@@ -77,12 +77,12 @@ func (d *Detect) SmartCtlInfo(device *models.Device) error {
 	//WWN: this is a serial number/world-wide number that will not change.
 	//DeviceType and DeviceName are already populated, however may change between collector runs (eg. config/host restart)
 	//InterfaceType:
-	device.ModelName = availableDeviceInfo.ModelName
+	device.ModelName = availableDeviceInfo.ModelNameDetermine()
 	device.InterfaceSpeed = availableDeviceInfo.InterfaceSpeed.Current.String
 	device.SerialNumber = availableDeviceInfo.SerialNumber
-	device.Firmware = availableDeviceInfo.FirmwareVersion
+	device.Firmware = availableDeviceInfo.FirmwareVersionDetermine()
 	device.RotationSpeed = availableDeviceInfo.RotationRate
-	device.Capacity = availableDeviceInfo.Capacity()
+	device.Capacity = availableDeviceInfo.CapacityDetermine()
 	device.FormFactor = availableDeviceInfo.FormFactor.Name
 	device.DeviceType = availableDeviceInfo.Device.Type
 	device.DeviceProtocol = availableDeviceInfo.Device.Protocol

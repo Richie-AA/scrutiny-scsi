@@ -230,15 +230,20 @@ type SmartInfo struct {
 	NvmeSmartHealthInformationLog NvmeSmartHealthInformationLog `json:"nvme_smart_health_information_log"`
 
 	// SCSI Protocol Specific Fields
+	ScsiStartStopCycleCounter struct {
+		AccumulatedStartStopCycles int64 `json:"accumulated_start_stop_cycles"`
+	} `json:"scsi_start_stop_cycle_counter"`
+	ScsiModelName		string				`json:"scsi_model_name"`
+	ScsiRevision		string				`json:"scsi_revision"`
 	Vendor              string              `json:"vendor"`
 	Product             string              `json:"product"`
 	ScsiVersion         string              `json:"scsi_version"`
-	ScsiGrownDefectList uint64               `json:"scsi_grown_defect_list"`
+	ScsiGrownDefectList uint64              `json:"scsi_grown_defect_list"`
 	ScsiErrorCounterLog ScsiErrorCounterLog `json:"scsi_error_counter_log"`
 }
 
-// Capacity finds the total capacity of the device in bytes, or 0 if unknown.
-func (s *SmartInfo) Capacity() int64 {
+// CapacityDetermine finds the total capacity of the device in bytes, or 0 if unknown.
+func (s *SmartInfo) CapacityDetermine() int64 {
 	switch {
 	case s.NvmeTotalCapacity > 0:
 		return s.NvmeTotalCapacity
@@ -251,6 +256,37 @@ func (s *SmartInfo) Capacity() int64 {
 type UserCapacity struct {
 	Blocks int64 `json:"blocks"`
 	Bytes  int64 `json:"bytes"`
+}
+
+// Functions to return SCSI specific values
+func (s *SmartInfo) ModelNameDetermine() string {
+	switch {
+	case len(s.ScsiModelName) > 0:
+		return s.ScsiModelName
+	case len(s.ModelName) > 0:
+		return s.ModelName
+	}
+	return ""
+}
+
+func (s *SmartInfo) FirmwareVersionDetermine() string {
+	switch {
+	case len(s.ScsiRevision) > 0:
+		return s.ScsiRevision
+	case len(s.FirmwareVersion) > 0:
+		return s.FirmwareVersion
+	}
+	return ""
+}
+
+func (s *SmartInfo) PowerCycleDetermine() int64 {
+	switch {
+	case s.ScsiStartStopCycleCounter.AccumulatedStartStopCycles != 0:
+		return s.ScsiStartStopCycleCounter.AccumulatedStartStopCycles
+	case s.PowerCycleCount != 0:
+		return s.PowerCycleCount
+	}
+	return 0
 }
 
 // Primary Attribute Structs
